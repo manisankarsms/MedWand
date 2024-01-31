@@ -6,7 +6,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class MyPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
     override fun getItemCount(): Int {
-        return 8 // Number of tabs
+        return 5 // Number of tabs
     }
 
     override fun createFragment(position: Int): Fragment {
@@ -16,7 +16,7 @@ class MyPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(
             1 -> PulseOximeterFragment()
             2 -> StethoscopeFragment()
             3 -> EcgFragment()
-//            4 -> PulseOximeterFragment()
+            4 -> BpFragment()
 //            5 -> StethoscopeFragment()
 //            6 -> EcgFragment()
 //            7 -> PulseOximeterFragment()

@@ -53,10 +53,10 @@ class MainActivity : AppCompatActivity() {
                     tabIcon.setImageResource(R.drawable.ecg)
                     tabText.text = "ECG"
                 }
-//                4 -> {
-//                    tabIcon.setImageResource(R.drawable.pulse_oximeter)
-//                    tabText.text = "Pulse Oximeter"
-//                }
+                4 -> {
+                    tabIcon.setImageResource(R.drawable.blood_pressure)
+                    tabText.text = "Blood Pressure"
+                }
 //                5 -> {
 //                    tabIcon.setImageResource(R.drawable.stethoscope)
 //                    tabText.text = "Stethoscope"
