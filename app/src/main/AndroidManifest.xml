@@ -12,6 +12,9 @@
         android:theme="@style/Theme.MedWand"
         tools:targetApi="31">
         <activity
+            android:name=".SummaryActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

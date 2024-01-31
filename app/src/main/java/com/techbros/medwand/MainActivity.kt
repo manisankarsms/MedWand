@@ -1,9 +1,12 @@
 package com.techbros.medwand
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -14,15 +17,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val viewPager = findViewById<ViewPager2>(R.id.viewPager)
         val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
+        val summaryBtn = findViewById<CardView>(R.id.summaryBtn)
 
         val pagerAdapter = MyPagerAdapter(this)
         viewPager.adapter = pagerAdapter
 
-//        // Attach TabLayout to ViewPager2
-//        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-//            // Customize your tab text here
-//            tab.text = "Tab ${(position + 1)}"
-//        }.attach()
+        summaryBtn.setOnClickListener {
+            val intent = Intent(this, SummaryActivity::class.java)
+            startActivity(intent)
+        }
 
         // Attach TabLayout to ViewPager2 with custom layout
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
@@ -42,6 +45,38 @@ class MainActivity : AppCompatActivity() {
                     tabIcon.setImageResource(R.drawable.pulse_oximeter)
                     tabText.text = "Pulse Oximeter"
                 }
+                2 -> {
+                    tabIcon.setImageResource(R.drawable.stethoscope)
+                    tabText.text = "Stethoscope"
+                }
+                3 -> {
+                    tabIcon.setImageResource(R.drawable.ecg)
+                    tabText.text = "ECG"
+                }
+//                4 -> {
+//                    tabIcon.setImageResource(R.drawable.pulse_oximeter)
+//                    tabText.text = "Pulse Oximeter"
+//                }
+//                5 -> {
+//                    tabIcon.setImageResource(R.drawable.stethoscope)
+//                    tabText.text = "Stethoscope"
+//                }
+//                6 -> {
+//                    tabIcon.setImageResource(R.drawable.ecg)
+//                    tabText.text = "ECG"
+//                }
+//                7 -> {
+//                    tabIcon.setImageResource(R.drawable.pulse_oximeter)
+//                    tabText.text = "Pulse Oximeter"
+//                }
+//                8 -> {
+//                    tabIcon.setImageResource(R.drawable.stethoscope)
+//                    tabText.text = "Stethoscope"
+//                }
+//                9 -> {
+//                    tabIcon.setImageResource(R.drawable.ecg)
+//                    tabText.text = "ECG"
+//                }
             }
 
             tab.customView = customTabLayout
