@@ -39,7 +39,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView1">
 
             <TextView
-                android:id="@+id/lblSpO2"
+                android:id="@+id/lblSys"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -47,12 +47,12 @@
                 android:text="Systolic"
                 android:textColor="@color/blue"
                 android:textSize="@dimen/sub_title"
-                app:layout_constraintBottom_toTopOf="@+id/spo2"
+                app:layout_constraintBottom_toTopOf="@+id/sys"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/spo2"
+                android:id="@+id/sys"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -62,11 +62,11 @@
                 android:textSize="@dimen/sub_title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/lblSpO2"
+                app:layout_constraintTop_toBottomOf="@id/lblSys"
                 app:layout_constraintWidth_percent="0.90" />
 
             <TextView
-                android:id="@+id/lblPulseRate"
+                android:id="@+id/lblDiastolic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -75,12 +75,12 @@
                 android:text="Diastolic"
                 android:textColor="@color/blue"
                 android:textSize="@dimen/sub_title"
-                app:layout_constraintBottom_toTopOf="@+id/pulseRate"
+                app:layout_constraintBottom_toTopOf="@+id/diastolic"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spo2" />
+                app:layout_constraintTop_toBottomOf="@+id/sys" />
 
             <EditText
-                android:id="@+id/pulseRate"
+                android:id="@+id/diastolic"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/arial"
@@ -90,7 +90,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lblPulseRate"
+                app:layout_constraintTop_toBottomOf="@+id/lblDiastolic"
                 app:layout_constraintWidth_percent="0.90" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -99,7 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/arial"
-            android:text="Save"
+            android:text="Start"
             android:textAllCaps="false"
             app:backgroundTint="@color/green"
             app:layout_constraintBottom_toBottomOf="parent"

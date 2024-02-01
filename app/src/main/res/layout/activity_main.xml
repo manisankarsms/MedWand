@@ -21,6 +21,7 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         app:tabIndicatorColor="@color/blue"
+        app:tabIndicatorGravity="bottom"
         app:tabSelectedTextAppearance="@color/blue"
         android:layout_width="0dp"
         android:layout_height="120dp"

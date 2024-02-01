@@ -286,7 +286,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="16dp"
-                        android:text="56/965"
+                        android:text="0/0"
                         android:textAlignment="center"
                         android:textSize="@dimen/sum_val"
                         android:textStyle="bold"

@@ -1,10 +1,16 @@
 package com.techbros.medwand
 
+import android.animation.ValueAnimator
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import androidx.fragment.app.Fragment
+import kotlin.random.Random
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +40,24 @@ class ThermometerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_thermometer, container, false)
+        val view:View =  inflater.inflate(R.layout.fragment_thermometer, container, false)
+
+        val thermButton = view.findViewById<Button>(R.id.btnSave)
+        val thermVal = view.findViewById<EditText>(R.id.thermValue)
+
+        thermButton.setOnClickListener {
+            val random = Random.Default
+            MainActivity.temperature = random.nextInt(93, 97)
+//            val temperatureEditable: Editable =
+//                Editable.Factory.getInstance().newEditable(MainActivity.temperature.toString())
+
+            val valueAnimator = ValueAnimator.ofInt(0, MainActivity.temperature)
+            valueAnimator.duration = 5000
+            valueAnimator.addUpdateListener { valueAnimator -> thermVal.setText(valueAnimator.animatedValue.toString()) }
+            valueAnimator.start()
+        }
+
+        return  view
     }
 
     companion object {

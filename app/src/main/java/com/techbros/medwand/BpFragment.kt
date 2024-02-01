@@ -1,10 +1,15 @@
 package com.techbros.medwand
 
+import android.animation.ValueAnimator
 import android.os.Bundle
+import android.text.Editable
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import kotlin.random.Random
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,8 +39,34 @@ class BpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bp, container, false)
-    }
+        val view:View =  inflater.inflate(R.layout.fragment_bp, container, false)
+
+        val bpBtn = view.findViewById<Button>(R.id.btnSave)
+        val systolic = view.findViewById<EditText>(R.id.sys)
+        val diastolic = view.findViewById<EditText>(R.id.diastolic)
+
+        bpBtn.setOnClickListener {
+            val random = Random.Default
+            MainActivity.systolic = random.nextInt(100, 180)
+//            val spo2Editable: Editable =
+//                Editable.Factory.getInstance().newEditable(MainActivity.systolic.toString())
+//            systolic.text = spo2Editable
+            val valueAnimator = ValueAnimator.ofInt(0, MainActivity.systolic)
+            valueAnimator.duration = 5000
+            valueAnimator.addUpdateListener { valueAnimator -> systolic.setText(valueAnimator.animatedValue.toString()) }
+            valueAnimator.start()
+
+            MainActivity.diastolic = random.nextInt(60, 100)
+//            val prEditable: Editable =
+//                Editable.Factory.getInstance().newEditable(MainActivity.diastolic.toString())
+//            diastolic.text = prEditable
+            val valueAnimator1 = ValueAnimator.ofInt(0, MainActivity.diastolic)
+            valueAnimator1.duration = 5000
+            valueAnimator1.addUpdateListener { valueAnimator -> diastolic.setText(valueAnimator.animatedValue.toString()) }
+            valueAnimator1.start()
+        }
+
+        return  view    }
 
     companion object {
         /**

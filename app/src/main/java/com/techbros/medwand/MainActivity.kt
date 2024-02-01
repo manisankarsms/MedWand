@@ -12,6 +12,13 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
+    companion object{
+        var systolic = 0
+        var diastolic = 0
+        var temperature = 0
+        var spO2 = 0
+        var pulseRate = 0
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

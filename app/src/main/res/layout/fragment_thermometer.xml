@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/rounded_bg"
     tools:context=".ThermometerFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +21,6 @@
             android:padding="8dp"
             android:text="Thermometer"
             android:textColor="@color/white"
-            android:textSize="@dimen/title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -32,8 +30,10 @@
             android:inputType="numberDecimal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/baseline_percent_24"
             android:fontFamily="@font/arial"
+            android:textSize="@dimen/sum_val"
+            android:textStyle="bold"
+            android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/btnSave"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
